@@ -21,8 +21,10 @@ public class Customer {
     }
 
     public void setCar(Car car){
-        if(car != null)
+        if(car != null) {
             this.car = car;
+            this.order = null;
+        }
     }
 
     public Car getCar(){
