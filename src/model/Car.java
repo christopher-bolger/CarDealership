@@ -1,9 +1,9 @@
 package model;
 
 public class Car {
-    private Wheel wheel;
-    private Body body;
-    private Engine engine;
+    private final Wheel wheel;
+    private final Body body;
+    private final Engine engine;
 
     public Car(Wheel wheel, Body body, Engine engine){
         if(wheel != null)
@@ -17,8 +17,8 @@ public class Car {
         else this.engine = new Engine(0, "NULL/CAR_ENGINE", "", "", "", "");
     }
 
-    public double drivableDistance(float unitsOfFuel){
-        return (unitsOfFuel * engine.getDistancePerUnitFuel()) / wheel.getTyreDistance();
+    public float range(float unitsOfFuel){
+        return (unitsOfFuel * engine.getAverageKmPerFuelUnit()) / wheel.getTyreDistance();
     }
 
     public float getVolume(){
@@ -29,7 +29,10 @@ public class Car {
         return body.getWidth() * body.getLength();
     }
 
-    public String toString(){
-        return "";
+    @Override
+    public String toString() {
+        return "wheel = " + wheel +
+                ", body = " + body +
+                ", engine = " + engine;
     }
 }

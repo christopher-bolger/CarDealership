@@ -1,13 +1,11 @@
 package model;
 
 public class Body {
-    private static final float TURNING_ANGLE_MINUMUM = -70f, TURNING_ANGLE_MAXIMUM = 70f;
     private final String type;
     private final float height, width, length;
     private final float bootCapacityL;
     private final int seats;
     private final boolean isRightHandDrive;
-    private float wheelBase;
 
     public Body(String type, float height, float width, float length, float bootCapacityL, int seats, boolean isRightHandDrive){
         if(type != null && !type.isEmpty())

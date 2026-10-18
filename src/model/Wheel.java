@@ -3,17 +3,16 @@ package model;
 public class Wheel {
     private final String type;
     private final double diameter;
-    private final float tireWidth = 0.2f;
-    private double tyreDistance = -1;
+    private float tyreDistance = -1;
 
-    public Wheel(String type, double diameter){
+    public Wheel(String type, float diameter){
         if(type != null && !type.isEmpty())
             this.type = type;
         else this.type = "NULL/WHEEL_TYPE";
         if(diameter > 0) {
             this.diameter = diameter;
             //distance tyre travels in a single rotation = circumference = d * pi
-            tyreDistance = diameter * Math.PI;
+            tyreDistance = diameter * (float) Math.PI;
         }
         else this.diameter = -1;
     }
@@ -26,7 +25,7 @@ public class Wheel {
         return diameter;
     }
 
-    public double getTyreDistance(){
+    public float getTyreDistance(){
         return tyreDistance;
     }
 
